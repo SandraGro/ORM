@@ -14,7 +14,8 @@ const sequelize = new Sequelize('tienda', 'root', 'MySQLPass', {
     host: 'localhost',
     dialect: 'mysql'
 });
-app.post('/product', productsController.addProduct);
+const products = productsController(sequelize)
+app.post('/product', products.addProduct);
 
 sequelize.authenticate().then(() => {
     console.log('Connection has been established successfully.');

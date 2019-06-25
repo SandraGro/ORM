@@ -30,5 +30,5 @@ module.exports = (sequelize) => {
             allowNull: true
         },
     }, { timestamps: false });
-    return Users;
+    return Productos;
 }

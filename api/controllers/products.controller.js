@@ -1,5 +1,6 @@
-const Products = require('../models/Productos');
+const ProductsModel = require('../models/Productos');
 module.exports = (sequelize) => {
+    const Products = ProductsModel(sequelize)
     const ProductsController = {
         addProduct: (req, res) => {
             if (!(req.body.nombre && req.body.precio && req.body.categoria && req.body.existencia && req.body.cantidad)) {
@@ -32,4 +33,5 @@ module.exports = (sequelize) => {
             }
         }
     }
+    return ProductsController;
 }
