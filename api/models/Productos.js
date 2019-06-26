@@ -14,7 +14,7 @@ module.exports = (sequelize) => {
             allowNull: false
         },
         categoria: {
-            type: Sequelize.ENUM('xs', 's', 'm', 'lg', 'xl'),
+            type: Sequelize.STRING,
             allowNull: false
         },
         existencia: {
@@ -26,7 +26,7 @@ module.exports = (sequelize) => {
             allowNull: false
         },
         descripcion: {
-            type: Sequelize.STRING,
+            type: Sequelize.TEXT,
             allowNull: true
         },
     }, { timestamps: false });

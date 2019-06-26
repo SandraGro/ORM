@@ -15,7 +15,11 @@ const sequelize = new Sequelize('tienda', 'root', 'MySQLPass', {
     dialect: 'mysql'
 });
 const products = productsController(sequelize)
-app.post('/product', products.addProduct);
+app.get('/product', products.listProduct);//lista
+app.put('/product/:id', products.updateProduct);//actualizar
+app.post('/product', products.addProduct);//crear
+app.delete('/product/:id', products.deleteProduct);//borrar
+app.get('/product/:id', products.findProduct);//encontrar
 
 sequelize.authenticate().then(() => {
     console.log('Connection has been established successfully.');
